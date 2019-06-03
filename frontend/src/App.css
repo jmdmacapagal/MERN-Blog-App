@@ -1,0 +1,49 @@
+body {
+  background-color: #e0d7d7;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.new-entry {
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.new-entry h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.create-blog-button {
+  display: flex;
+  justify-content: flex-end;
+} 
+
+.post-feature {
+  width: 800px;
+  margin: auto;
+}
+
+.read-more-button {
+  margin-top: 10px;
+}
+
+.register-form {
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.register-form h3 {
+  text-align: center;
+}
+
+.register-button-group {
+  display: flex;
+  justify-content: flex-end;
+}
