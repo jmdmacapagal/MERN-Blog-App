@@ -3,7 +3,7 @@ let BlogPost = require('../models/Blog.model')
 const verifyUser = require('../verifyToken')
 
 // find all
-router.get('/', verifyUser, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const posts = await BlogPost.find()
         res.status(200).json(posts)
@@ -15,7 +15,7 @@ router.get('/', verifyUser, async (req, res) => {
 })
 
 // find by id
-router.get('/:id', async (req, res) => {
+router.get('/:id', verifyUser, async (req, res) => {
     const id = req.params.id
     try {
         const post = await BlogPost.findById(id)

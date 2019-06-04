@@ -25,6 +25,26 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+router.post('/login', async (req, res) => {
+    // validation
+    const { error } = loginValidation(req.body)
+    if (error) return res.status(400).send(error)
+
+    // check if existing
+    const user = await User.findOne({username: req.body.username})
+    if (!user) return res.status(400).send('Wrong Username or Password')
+
+    // check if password match
+    const validPassword = await bcrypt.compare(req.body.password, user.password)
+    if (!validPassword) return res.status(400).send('Wrong Username or Password')
+
+    // login and create token
+    const token = jwt.sign({id: user._id}, process.env.TOKEN_SECRET)
+    res.header('auth-token', token)
+    res.send('Logged In.')
+    console.log('logged in')
+})
+
 // add new user
 router.post('/register', async (req, res) => {
 
