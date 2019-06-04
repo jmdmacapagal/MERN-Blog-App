@@ -41,7 +41,7 @@ export default class CreateBlog extends Component {
           <h3>Create New Entry</h3>
           <form onSubmit={this.submitHandler}>
             <div className="form-group form-row">
-              <label class="col-2">Blog Title:</label>
+              <label className="col-2">Blog Title:</label>
               <input 
                 type="text"
                 className="form-control col"
@@ -63,7 +63,7 @@ export default class CreateBlog extends Component {
             </div>
 
             <div className="form-group form-row">
-              <label class="col-2">Author:</label>
+              <label className="col-2">Author:</label>
               <input 
                 type="text"
                 className="form-control col"
